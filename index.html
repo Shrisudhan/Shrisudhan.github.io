@@ -1,553 +1,317 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>Shrisudhan Govindarajan</title>
-  
-  <meta name="author" content="Shrisudhan Govindarajan">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrisudhan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 
+<script>
+    // If theme not set manually, follow system preference
+    if (!localStorage.getItem('theme')) {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        document.body.classList.add('dark-mode');
+      }
+    }
+  
+    // Optional: restore user's previous choice if they toggled
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else if (saved === 'light') {
+      document.body.classList.remove('dark-mode');
+    }
+</script>
+
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">Shri</div>
+            <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#talks">Talks</a></li>
+                <li><a href="data/CV.pdf">CV</a></li>
+            </ul>
+            </nav>
+            <div class="nav-icons">
+            <i class="fas fa-moon" id="theme-toggle"></i>
+            </div>
+        </div>
+    </header>
 
-      <!-- Bio -->
+    <section id="about">
+        <div class="container">
+        <div class="section-wrapper">
+        <div class="section-title">About</div>
+        <div class="section-content">
+        </div>
+        </div>
+        <div class="about-wrapper">
+        <div class="about-left">
+            <img src="dp.jpg" alt="Profile Photo" class="profile-pic">
+            <h2>Shrisudhan Govindarajan</h2>
+            <p class="role">PhD Student @ SFU, Burnaby</p>
+            <div class="social-icons">
+            <a href="mailto:shrisudhan07@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://scholar.google.com/citations?user=6JS1yc0AAAAJ&hl=en"><i class="fab fa-google"></i></a>
+            <a href="https://github.com/Shrisudhan"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/shrisudhan-govindarajan-b6a914157/"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
 
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Shrisudhan Govindarajan</name>
-              </p>
-              <p>
-                I am currently a Ph.D. student in <a href="https://www.sfu.ca/computing.html">Computing Science, Simon Fraser University(SFU)</a>, advised by <a herf="https://theialab.ca/">Prof. Andrea Tagliasacchi</a>.
-                Before this, I was a Data & Applied Scientist at <a href="https://www.microsoft.com/en-in/msidc">Microsoft India (R&D), Hyderabad</a>. 
-                I completed my Dual Degree from <a href="https://www.iitm.ac.in/">IIT Madras</a> with Masters in Data Science.
-              </p>
-              <p>
-                I've had the pleasure of working with <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a> from IIT Madras,
-                on self-supervised light field synthesis. I've also had the chance to worked with
-                <a href="https://www.linkedin.com/in/pawan-baheti-4a67075/?originalSubdomain=in">Pawan Baheti</a> from Qualcomm, India as a 
-                part of <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2021-india"><strong>Qualcomm Innovation Fellowship, 2021-22</strong></a>.
-                
-              </p>
-              <p>
+        <div class="about-right">
+            <p>
+                I am currently a Ph.D. student in <a href="https://www.sfu.ca/computing.html">GRuVi Lab, SFU</a>, advised by <a href="https://theialab.ca">Prof. Andrea Tagliasacchi</a>.
+                I've had the pleasure of working with <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a> from IIT Madras, on self-supervised light field synthesis. 
+                I've also had the chance to worked with <a href="https://www.linkedin.com/in/pawan-baheti-4a67075/?originalSubdomain=in">Pawan Baheti</a> from Qualcomm, India as a part of <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2021-india"><strong>Qualcomm Innovation Fellowship, 2021-22</strong></a>.
+            </p>
+            <p>
                 My main research interest lies at the intersection of Computer vision and Computer Graphics. 
-                I am recently drawn towards the latest research works in NeRF and 3DGS, and their intersection for 3D scene representation.
+                I am recently drawn towards the latest research works in NeRF and 3DGS, and their intersection for 3D scene representation. 
                 I am mainly interested in working towards developing generalizable 3D scene representations.
-              </p>
-              <!-- <p> -->
-                <!-- Link to my <a href="data/DDP_Thesis.pdf">Masters Thesis</a> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; -->
-                <!-- Link to my <a href="data/BTP_Thesis.pdf">Bachelors Thesis</a> -->  
-              <!-- </p> -->
+            </p>
+        </div>
+        </div>
+        </div>
+        <hr class="section-divider">
+    </section>
 
-              <p style="text-align:center">
-                <a href="mailto:shrisudhan07@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="data/CV.pdf">CV</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?user=Y9l_dogAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://twitter.com/Shrisudhan001">Twitter</a> &nbsp/&nbsp
-                <a href="https://github.com/Shrisudhan">Github</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/Shri_photo.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/Shri_photo.jpg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
+    <section id="publications">
+        <div class="container">
+        <div class="section-wrapper">
+            <div class="section-title">Publications</div>
+            <div class="section-content">
 
+                <div class="publication highlighted-publication">
+                    <video src="pub_thumbnails/radfoam.mp4" autoplay muted loop playsinline></video>
+                    <div class="pub-info">
+                        <p><strong><a href="https://radfoam.github.io/">Radiant Foam: Real-Time Differentiable Ray Tracing</a></strong><br>
+                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan*</a>,
+                        <a class="author" href="http://drebain.com/" target="_blank">Daniel Rebain*</a>,
+                        <a class="author" href="https://www.cs.ubc.ca/~kmyi/" target="_blank">Kwang Moo Yi</a>,
+                        <a class="author" href="https://theialab.ca/" target="_blank">Andrea Tagliasacchi</a><br>
+                        <a class="conference">Arxiv &middot; 2025</a><br>
+                        </p>
+                        <div class="pub-links">
+                            <a href="radfoam.github.io" class="pub-link">Project page</a>
+                            <a href="https://arxiv.org/abs/2502.01157" class="pub-link">Arxiv</a>
+                            <a href="https://github.com/theialab/radfoam" class="pub-link">Code</a>
+                            <details class="pub-link">
+                                <summary>Cite</summary>
+                                <pre>
+@article{govindarajan2025radfoam,
+author = {Govindarajan, Shrisudhan and Rebain, Daniel and Yi, Kwang Moo and Tagliasacchi, Andrea},
+title = {Radiant Foam: Real-Time Differentiable Ray Tracing},
+journal = {arXiv:2502.01157},
+year = {2025},
+}
+                                </pre>
+                            </details>
+                        </div>
+                    </div>
+                </div>
 
-      <!-- Research -->
+                <div class="publication">
+                    <video src="pub_thumbnails/noksr.mp4" autoplay muted loop playsinline></video>
+                    <div class="pub-info">
+                        <p><strong><a href="https://theialab.github.io/noksr">NoKSR: Kernel-Free Neural Surface Reconstruction via Point Cloud Serialization</a></strong><br>
+                        <a class="author" href="http://colinzhenli.github.io/" target="_blank">Colin Li*</a>,
+                        <a class="author" href="https://wsunid.github.io/" target="_blank">Weiwei Sun*</a>,
+                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan</a>,
+                        <a class="author" href="https://scholar.google.com/citations?user=eOPO9E0AAAAJ&hl=en" target="_blank">Shaobo Xia</a>,
+                        <a class="author" href="http://drebain.com/" target="_blank">Daniel Rebain</a>,
+                        <a class="author" href="https://www.cs.ubc.ca/~kmyi/" target="_blank">Kwang Moo Yi</a>,
+                        <a class="author" href="https://theialab.ca/" target="_blank">Andrea Tagliasacchi</a><br>
+                        <a class="conference">3DV &middot; 2025 &middot; Singapore</a><br>
+                        </p>
+                        <div class="pub-links">
+                            <a href="https://theialab.github.io/noksr/" class="pub-link">Project page</a>
+                            <a href="https://arxiv.org/abs/2502.12534" class="pub-link">Arxiv</a>
+                            <a href="https://github.com/theialab/noksr" class="pub-link">Code</a>
+                            <details class="pub-link">
+                                <summary>Cite</summary>
+                                <pre>
+@article{li2025noksr,
+author = {Zhen Li and Weiwei Sun and Shrisudhan Govindarajan and Shaobo Xia and Daniel Rebain and Kwang Moo Yi and Andrea Tagliasacchi},
+title = {NoKSR: Kernel-Free Neural Surface Reconstruction via Point Cloud Serialization},
+year = {2025},
+booktitle = {International Conference on 3D Vision (3DV)},
+}
+                                </pre>
+                            </details>
+                        </div>
+                    </div>
+                </div>
 
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Publications</heading>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                <div class="publication">
+                    <video src="pub_thumbnails/laghash.mp4" autoplay muted loop playsinline></video>
+                    <div class="pub-info">
+                        <p><strong><a href="https://theialab.github.io/laghashes/">Lagrangian Hashing for Compressed Neural Field Representations</a></strong><br>
+                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan*</a>,
+                        <a class="author" href="https://zenos4mbu.github.io" target="_blank">Zeno Sambugaro*</a>,
+                        <a class="author" href="https://ahanio.github.io" target="_blank">Ahan Shabhanov</a>,
+                        <a class="author" href="https://tovacinni.github.io" target="_blank">Towaki Takikawa</a>,
+                        <a class="author" href="https://wsunid.github.io/" target="_blank">Weiwei Sun</a>,
+                        <a class="author" href="http://drebain.com/" target="_blank">Daniel Rebain</a>,
+                        <a class="author" href="https://webapps.unitn.it/du/it/Persona/PER0003698/Curriculum" target="_blank">Nicola Conci</a>,
+                        <a class="author" href="https://www.cs.ubc.ca/~kmyi/" target="_blank">Kwang Moo Yi</a>,
+                        <a class="author" href="https://theialab.ca/" target="_blank">Andrea Tagliasacchi</a><br>
+                        <a class="conference">ECCV &middot; 2024 &middot; Milan</a><br>
+                        </p>
+                        <div class="pub-links">
+                            <a href="https://theialab.github.io/laghashes/" class="pub-link">Project page</a>
+                            <a href="https://arxiv.org/abs/2409.05334" class="pub-link">Arxiv</a>
+                            <a href="https://github.com/theialab/lagrangian_hashes" class="pub-link">Code</a>
+                            <details class="pub-link">
+                                <summary>Cite</summary>
+                                <pre>
+@article{govindarajan2024laghashes,
+author = {Govindarajan, Shrisudhan and Sambugaro, Zeno and Shabhanov, Ahan and Takikawa, Towaki and Sun, Weiweiand Rebain, Daniel and Conci, Nicola and  Yi, Kwang Moo and Tagliasacchi, Andrea},
+title = {Lagrangian Hashing for Compressed Neural Field Representations},
+booktitle = {European Conference on Computer Vision (ECCV) },
+year = {2024},
+}
+                                </pre>
+                            </details>
+                        </div>
+                    </div>
+                </div>
 
-        
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>  <!-- onmouseout="recon_stop()" onmouseover="recon_stopt()" bgcolor="#ffffd0" -->
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/laghash_teaser.png' width="180">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://theialab.github.io/laghashes/">
-                <papertitle>Lagrangian Hashing for Compressed Neural Field Representations                </papertitle>
-              </a>
-              <br>
-              <strong>Shrisudhan Govindarajan*</strong>,
-              <a href="https://zenos4mbu.github.io/">Zeno Sambugaro*</a>,
-              <a href="https://ahanio.github.io/">Ahan Shabhanov</a>,
-              <a href="https://tovacinni.github.io/">Towaki Takikawa</a>,
-              <a href="https://wsunid.github.io/">Weiwei Sun</a>,
-              <a href="http://drebain.com/">Daniel Rebain</a>,
-              <a href="https://webapps.unitn.it/du/it/Persona/PER0003698/Curriculum">Nicola Conci</a>,
-              <a href="https://www.cs.ubc.ca/~kmyi/">Kwang Moo Yi</a>,
-              <a href="https://theialab.ca/">Andrea Tagliasacchi</a>
-              <br>
-              <em>ECCV</em>, 2024
-              <br>
-              <a href="https://theialab.github.io/laghashes/">project</a>
-              /
-              <a href="https://theialab.github.io/laghashes/resources/paper.pdf">pdf</a>
-              /
-              <a href="https://arxiv.org/abs/2409.05334">arXiv</a>
-              /
-              <a href="https://github.com/theialab/lagrangian_hashes">code</a>
-              <p>
-                A representation for neural fields combining the characteristics of fast training NeRF methods
-                that rely on Eulerian grids (i.e.~InstantNGP), with those that employ points equipped with 
-                features as a way to represent information (e.g. 3D Gaussian Splatting or PointNeRF).
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                <div class="publication">
+                    <video src="pub_thumbnails/banf.mov" autoplay muted loop playsinline></video>
+                    <div class="pub-info">
+                        <p><strong><a href="https://theialab.github.io/banf/">BANF: Band-limited Neural Fields for Levels of Detail Reconstruction</a></strong><br>
+                        <a class="author" href="https://ahanio.github.io" target="_blank">Ahan Shabhanov</a>,
+                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan</a>,
+                        <a class="author" href="https://codyreading.github.io/" target="_blank">Cody Reading</a>,
+                        <a class="author" href="https://lilygoli.github.io/" target="_blank">Lily Goli</a>,
+                        <a class="author" href="http://drebain.com/" target="_blank">Daniel Rebain</a>,
+                        <a class="author" href="https://www.cs.ubc.ca/~kmyi/" target="_blank">Kwang Moo Yi</a>,
+                        <a class="author" href="https://theialab.ca/" target="_blank">Andrea Tagliasacchi</a><br>
+                        <a class="conference">CVPR &middot; 2024 &middot; Seattle</a><br>
+                        </p>
+                        <div class="pub-links">
+                            <a href="https://theialab.github.io/banf/" class="pub-link">Project page</a>
+                            <a href="https://arxiv.org/abs/2404.13024" class="pub-link">Arxiv</a>
+                            <a href="https://github.com/theialab/banf" class="pub-link">Code</a>
+                            <details class="pub-link">
+                                <summary>Cite</summary>
+                                <pre>
+@article{ahan2024banf,
+author = {Shabanov, Ahan and Govindarajan, Shrisudhan and Reading, Cody and Goli, Lily and Rebain, Daniel and Moo Yi, Kwang and Tagliasacchi, Andrea},
+title = {BANF: Band-limited Neural Fields for Levels of Detail Reconstruction},
+booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+year = {2024},
+}
+                                </pre>
+                            </details>
+                        </div>
+                    </div>
+                </div>
 
-        
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>   <!-- bgcolor="#ffffd0" -->
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/banf_teaser.png' width="180">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://theialab.github.io/banf/">
-                <papertitle>BANF: Band-limited Neural Fields for Levels of Detail Reconstruction</papertitle>
-              </a>
-              <br>
-              <a href="https://ahanio.github.io/">Ahan Shabhanov</a>,
-              <strong>Shrisudhan Govindarajan</strong>,
-              <a href="https://codyreading.github.io/">Cody Reading</a>,
-              <a href="https://lilygoli.github.io/">Lily Goli</a>,
-              <a href="http://drebain.com/">Daniel Rebain</a>,
-              <a href="https://www.cs.ubc.ca/~kmyi/">Kwang Moo Yi</a>,
-              <a href="https://theialab.ca/">Andrea Tagliasacchi</a>
-              <br>
-              <em>CVPR</em>, 2024
-              <br>
-              <a href="https://theialab.github.io/banf/">project</a>
-              /
-              <a href="https://arxiv.org/pdf/2404.13024.pdf">pdf</a>
-              /
-              <a href="https://arxiv.org/abs/2404.13024">arXiv</a>
-              /
-              <a href="https://github.com/theialab/banf">code</a>
-              <p>
-                <!-- Effective filtering of neural fields is critical to enable level-of-detail processing in 
-                downstream applications, and support operations that involve sampling the field on regular 
-                grids (e.g. marching cubes).  -->
-                We show that via a simple modification, one can obtain neural fields that are low-pass 
-                filtered, and in turn show how this can be exploited to obtain a frequency decomposition of 
-                the entire signal.
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                <div class="publication">
+                    <img src="pub_thumbnails/dpmv.png" alt="Paper thumbnail">
+                    <div class="pub-info">
+                        <p><strong><a href="">Stereo-Knowledge Distillation from dpMV to Dual Pixels for Light Field Video Reconstruction</a></strong><br>
+                        <a class="author" href="https://scholar.google.com/citations?user=z_VblYsAAAAJ&hl=en" target="_blank">Aryan Garg</a>,
+                        <a class="author" href="https://www.linkedin.com/in/raghav-mallampalli/?originalSubdomain=in" target="_blank">Raghav Mallampalli</a>,
+                        <a class="author" href="https://www.linkedin.com/in/akshat-joshi-324395194/?originalSubdomain=in" target="_blank">Akshat Joshi</a>,
+                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan</a>,
+                        <a class="author" href="https://www.ee.iitm.ac.in/kmitra/research.html" target="_blank">Kaushik Mitra</a><br>
+                        <a class="conference">ICCP &middot; 2024 &middot; Lausanne</a><br>
+                        </p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link">Project page</a>
+                            <a href="https://arxiv.org/abs/2405.11823" class="pub-link">Arxiv</a>
+                            <a href="https://github.com/Aryan-Garg/dp-LFVR" class="pub-link">Code</a>
+                            <details class="pub-link">
+                                <summary>Cite</summary>
+                                <pre>
+@article{garg2024dpmv,
+author = {Aryan Garg and Raghav Mallampali and Akshat Joshi and Shrisudhan Govindarajan and Kaushik Mitra},
+title = {Stereo-Knowledge Distillation from dpMV to Dual Pixels for Light Field Video Reconstruction},
+booktitle = {International Conference on Computational Photography (ICCP)},
+year = {2024},
+}
+                                </pre>
+                            </details>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="publication">
+                    <img src="pub_thumbnails/monolf.png" alt="Paper thumbnail">
+                    <div class="pub-info">
+                        <p><strong><a href="https://shrisudhang.github.io/pages/monolf-ECCV22/">Synthesizing Light Field Video from Monocular Video</a></strong><br>
+                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan</a>,
+                        <a class="author" href="https://asprasan.github.io/" target="_blank">Prasan Shedligeri</a>,
+                        <a class="author" href="" target="_blank">Sarah</a>,
+                        <a class="author" href="https://www.ee.iitm.ac.in/kmitra/research.html" target="_blank">Kaushik Mitra</a><br>
+                        <a class="conference">ECCV <b>[oral]</b> &middot; 2022 &middot; Tel Aviv</a><br>
+                        </p>
+                        <div class="pub-links">
+                            <a href="https://shrisudhang.github.io/pages/monolf-ECCV22/" class="pub-link">Project page</a>
+                            <a href="https://arxiv.org/abs/2207.10357.pdf" class="pub-link">Arxiv</a>
+                            <a href="https://github.com/ShrisudhanG/Synthesizing-Light-Field-Video-from-Monocular-Video" class="pub-link">Code</a>
+                            <details class="pub-link">
+                                <summary>Cite</summary>
+                                <pre>
+@article{govindarajan2022monolf,
+author = {Govindarajan, Shrisudhan and Shedligeri, Prasan and Sarah and Mitra, Kaushik},
+title = {Synthesizing Light Field Video from Monocular Video},
+booktitle = {European Conference on Computer Vision (ECCV) },
+year = {2022},
+}
+                                </pre>
+                            </details>
+                        </div>
+                    </div>
+                </div>
 
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>   <!-- bgcolor="#ffffd0" -->
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/dp_teaser.png' width="180" height="90">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="">
-                <papertitle>Stereo-Knowledge Distillation from dpMV to Dual Pixels for Light Field Video Reconstruction
-                </papertitle>
-              </a>
-              <br>
-              <a href="https://scholar.google.com/citations?user=z_VblYsAAAAJ&hl=en">Aryan Garg</a>,
-              <a href="https://www.linkedin.com/in/raghav-mallampalli/?originalSubdomain=in">Raghav Mallampalli</a>,
-              <a href="https://www.linkedin.com/in/akshat-joshi-324395194/?originalSubdomain=in">Akshat Joshi</a>,
-              <strong>Shrisudhan Govindarajan</strong>,
-              <a href="https://www.ee.iitm.ac.in/kmitra/research.html">Kaushik Mitra</a>
-              <br>
-              <em>ICCP</em>, 2024
-              <br>
-              <a href="">project</a>
-              /
-              <a href="https://arxiv.org/pdf/2405.11823">pdf</a>
-              /
-              <a href="https://arxiv.org/abs/2405.11823">arXiv</a>
-              /
-              <a href="https://github.com/Aryan-Garg/dp-LFVR">code</a>
-              <p>
-                We collect the first 3-view dual-pixel video dataset, dpMV, and show that dual-pixel methods 
-                for light-field reconstruction outperform purely monocular methods, especially in challenging 
-                foreground-background separation regions using faithful guidance from dual pixels.
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+        </div>
+        </div>
+        <hr class="section-divider">
+    </section>
 
+    <section id="talks">
+        <div class="container">
+        <div class="section-wrapper">
+            <div class="section-title">Talks</div>
+            <div class="section-content">
 
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/MonoLF.png' width="180">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://shrisudhang.github.io/pages/monolf-ECCV22/">
-                <papertitle>Synthesizing Light Field Video from Monocular Video</papertitle>
-              </a>
-              <br>
-              <strong>Shrisudhan Govindarajan</strong>,
-              <a href="https://asprasan.github.io/">Prasan Shedligeri</a>,
-              <a href="">Sarah</a>,
-              <a href="https://www.ee.iitm.ac.in/kmitra/research.html">Kaushik Mitra</a>
-              <br>
-              <em>ECCV</em>, 2022 <strong>[oral]</strong>
-              <br>
-              <a href="https://shrisudhang.github.io/pages/monolf-ECCV22/">project</a>
-              /
-              <a href="https://arxiv.org/pdf/2207.10357">pdf</a>
-              /
-              <a href="https://arxiv.org/abs/2207.10357">arXiv</a>
-              /
-              <a href="https://github.com/ShrisudhanG/Synthesizing-Light-Field-Video-from-Monocular-Video">code</a>
-              <p>
-                We propose a self-supervised learning technique to reconstruct light field from monocular 
-                video with following novelties: an adaptive low-rank representation for each scene, 
-                an explicit disocclusion handling technique, and a novel supervised refinement block(optional)
-                that exploits available ground truth Light Field image dataset.
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                <div class="talk">
+                    <img src="talks_thumbnail/MIPI-logo.png" alt="MIPI logo">
+                    <div class="talk-info">
+                        <p><strong><a>Synthesizing Light Field Video from Monocular Video</a></strong><br>
+                        <a class="conference">ECCV &middot; 2022 &middot; Tel Aviv</a><br></p>
+                    </div>
+                </div>
 
+                <div class="talk">
+                    <img src="talks_thumbnail/VisionIndia-logo.png" alt="ICVGIP logo">
+                    <div class="talk-info">
+                        <p><strong><a>Synthesizing Light Field Video from Monocular Video</a></strong><br>
+                        <a class="conference">ICVGIP &middot; 2022 &middot; Tel Aviv</a><br></p>
+                    </div>
+                </div>
 
-      <!-- Invited Talks -->
+            </div>
+        </div>
+        </div>
+        <hr class="section-divider">
+    </section>
 
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Invited Talks</heading>
-              <p></p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>   <!-- bgcolor="#ffffd0" -->
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/MIPI-logo.png' width="160">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://mipi-challenge.org/">
-                <papertitle>Mobile Intelligent Photography and Imaging (MIPI) workshop, ECCV 2022</papertitle>
-              </a>
-              <br>
-              <strong>Invited Talk: Synthesizing Light Field Video from Smartphones</strong>
-              <br>
-              <em>ECCV</em>, 2022
-              <br>
-              <a href="https://mipi-challenge.org/">workshop</a>
-              /
-              <a href="https://docs.google.com/presentation/d/1A-WHOiC7no5o6WLsOlqmjCFLGJ5jpTiKKk4rN2MwE5A/edit?usp=sharing">slides</a>
-              /
-              <a href="https://www.youtube.com/watch?v=2SijuyeC05w&ab_channel=MIPIWorkshop">youtube</a>
-              <p></p>
-              <!-- <p> 
-                In the last 2 decades, we have seen a revolution in mobile imaging with improvements in both the hardware and software.
-                However, these cameras capture only a 2D projection of our rich 3D world. In this talk we propose a self-supervised learning
-                technique to reconstruct light field(containing 3D information) video from simple smartphone camera configurations,
-                namely monocualr camera and stereo camera(2D projections). We propose various novel techniques to address the challenges associated 
-                with these camera configurations in our attempt to synthesize structurally and temporally consistent light field video.
-              </p> -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>   <!-- bgcolor="#ffffd0" -->
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/VisionIndia-logo.png' width="160">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://events.iitgn.ac.in/2022/icvgip/vision_india.html">
-                <papertitle>Vision India, ICVGIP 2022</papertitle>
-              </a>
-              <br>
-              <strong>Invited Talk: Synthesizing Light Field Video from Monocular Video</strong>
-              <br>
-              <em>ICVGIP</em>, 2022
-              <br>
-              <a href="https://events.iitgn.ac.in/2022/icvgip/vision_india.html">conference</a>
-              /
-              <a href="https://docs.google.com/presentation/d/17LKhPIttirrtu6fHv4mDSz5Th0xLu6khFyn9pWpuFe0/edit?usp=sharing">slides</a>
-              <p></p>
-              <!-- <p> 
-                Learning-based techniques which solve the ill-posed problem of LF reconstruction from sparse (1, 2 or 4) views have 
-                significantly reduced the requirement for complex hardware. LF video reconstruction from sparse views poses a special 
-                challenge as acquiring ground-truth for training these models is hard. In this talk we propose a self-supervised learning-based
-                algorithm for LF video reconstruction from monocular videos. We propose novel techniques to address the limitations of 
-                monocular input sequences for light field synthesis task, like difficulty in occlusion handling and depth scale perception.
-              </p> -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-
-      <!-- Professional Experience -->
-
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Professional Experience</heading>
-              <p></p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>   <!-- bgcolor="#ffffd0" -->
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/Microsoft-logo.jpg' width="160">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://www.microsoft.com/en-in">
-                <papertitle>Microsoft R&D, India - Search Technology Center India</papertitle>
-              </a>
-              <br>
-              <strong>Data and Applied Scientist</strong>
-              <br>
-              <em>July, 2022 - August, 2023</em>
-              <br>
-              <!-- <p> 
-                In the current version of Microsoft Teams, Office and Sharepoint space, for a given search, we see multiple entity sets,
-                like People suggestions, Message suggestions, File suggestions, Calendar suggestions and others. I work on developing a 
-                ranking algorithm to rank these different entity sets based on their relevance to the searched query and previous user 
-                interaction.
-              </p> -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>   <!-- bgcolor="#ffffd0" -->
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/Microsoft-logo.jpg' width="160">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://www.microsoft.com/en-in">
-                <papertitle>Microsoft R&D, India - Search Technology Center India</papertitle>
-              </a>
-              <br>
-              <strong>Data and Applied Scientist Intern</strong>
-              <br>
-              <em>May, 2021 - July, 2021</em>
-              <br>
-              <!-- <p>
-                Developed an ranking algorithm to rank related suggestions for a query based on the relatedness and usefulness of 
-                the suggestion in an Enterprise-level(Microsoft Bing Work vertical) setup.
-              </p>-->
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>   <!-- bgcolor="#ffffd0" -->
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/AutoInfer-logo.png' width="160">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://www.microsoft.com/en-in">
-                <papertitle>AutoInfer Pvt. Ltd.</papertitle>
-              </a>
-              <br>
-              <strong>Deep Learning Intern</strong>
-              <br>
-              <em>June, 2020 - August, 2020</em>
-              <br>
-              <!-- <p>
-                Developed a Generative Network inspired by the Layout2Image algorithm to generate realistic documents from user-specified 
-                layouts. Built a table detection network inspired by LayoutLM algorithm which extracts textual and image features from the 
-                document to detect tables and information.
-              </p> -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-
-
-      <!-- Other projects -->
-
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Other projects</heading>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/Caching.png' width="160">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="">
-                <papertitle>Caching in DNNs - Speeding up Inference for similar inputs</papertitle>
-              </a>
-              <br>
-              <strong>Shrisudhan Govindarajan</strong>,
-              <a href="https://scholar.google.co.in/citations?user=4pr87jAAAAAJ&hl=en">Pratyush Kumar</a>
-              <br>
-              <a href="data\Caching.pdf">pdf</a>
-              /
-              <a href="https://github.com/Shrisudhan/Shrisudhan-Caching-in-DNNs---Speeding-up-inference-for-similar-inputs">code</a>
-              <p></p>
-              <!-- <p>
-                We propose to use caching in DNNs to improve the inference speed for classification problems and also improve the robustness
-                of the network towards brightness, contrast variations, and increase immunity towards adversarial attacks.
-              </p> -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
-        
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src='images/BTP.png' width="160">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="">
-                <papertitle>Battery Prognostics: Estimation of Remaining Operational Time of batteries using convolution 
-                  and temporal-correlation</papertitle>
-              </a>
-              <!-- <br>
-              <strong>Shrisudhan Govindarajan</strong>,
-              <a href="https://scholar.google.com/citations?hl=en&user=tu-ntggAAAAJ">Deep Singh</a>,
-              <a href="https://scholar.google.co.in/citations?user=cZBq_9MAAAAJ&hl=en">Arunachalam N</a>, -->
-              <br>
-              <em>Bachelors Thesis</em>
-              <br>
-              <a href="data\BTP_Thesis.pdf">pdf</a>
-              <p></p>
-              <!-- <p>
-                In this study, we propose a novel deep neural network (DNN) based architecture which uses temporal information
-                to learn the changes in the battery across time and utilizes that in-coherence with the available parameters 
-                for estimating accurate remaining operational time.
-              </p> -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-
-      <!-- Education -->
-
-      <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Education</heading>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto">
-        <tbody>
-          <tr>
-              <td style="padding:10px;width:25%;vertical-align:middle">
-                  <div class="one">
-                      <img src='images/iitm_logo.png' width="110" class="side-image">
-                  </div>
-              </td>
-              <td style="padding:10px;width:75%;vertical-align:top">
-                  <papertitle><big>Indian Institute of Technology Madras</big></papertitle>
-                  <br>
-                  <papertitle style="color:gray"><big>Integrated Dual Degree in </big></papertitle><papertitle><big>Data Science and Mechanical Engineering(Honours)</big></papertitle>
-                  <br>
-                  July '17 - May '22
-                  <br>
-              </td>
-          </tr>
-        </tbody>
-      </table>
-      </div> -->
-
-      <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Miscellaneous</heading>
-              <p>
-                Participated in Intern IIT 2018, held at IIT Bombay. We presented a prototype of driver assistance system with lane 
-                detection, object detection and, sign and signal detection features(<a href="https://nikotto.in/ADAS.html">Link</a>).
-              </p>
-              <p>
-                Some of the best experiences I've had in my undergraduate life is due to Computational Imaging Group(
-                  <a href="https://www.ee.iitm.ac.in/comp_photolab/">Link</a>). The seniors and people there are some of the best and 
-                  loveliest you can find in IIT Madras. I am highly indebted for being a part of the group.
-              </p>
-              <p>
-                I have also had the pleasure to be a part of the IIT Madras Wolves(football/soccer team).
-              </p>
-              <p>
-               In my free time, I love to watch Movies, TV shows and you can most definitely find me listening to music at any time of day.
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table> -->
-        
- 
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                <br>
-                This template is stolen from <a href="https://jonbarron.info/">here</a>.
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-
-      </td>
-    </tr>
-  </table>
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
-
 </html>
