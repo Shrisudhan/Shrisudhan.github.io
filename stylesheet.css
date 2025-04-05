@@ -336,3 +336,73 @@ body.dark-mode .talk-info a {
 body.dark-mode .talk-info .conference {
   color: #bbb;
 }
+
+/* Mobile support */
+@media (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-left, .about-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-right {
+    padding-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .publication {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .publication img,
+  .publication video {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .pub-info {
+    text-align: center;
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .pub-info p {
+    text-align: center;
+  }
+
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .talk {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .talk img,
+  .talk video {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .talk-info p {
+    text-align: center;
+  }
+}
