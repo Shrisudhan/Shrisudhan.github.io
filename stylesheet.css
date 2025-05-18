@@ -298,6 +298,27 @@ body.dark-mode .pub-info .pub-link pre {
   background-color: #2d2d2d;
   color: #eee;
 }
+/* Light mode badges */
+.pub-badge {
+  display: inline-block;
+  background-color: #fff4e5;
+  color: #b35a00;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  margin-left: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid #ffc88a;
+  white-space: nowrap;
+  vertical-align: middle;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+/* Dark mode badges */
+body.dark-mode .pub-badge {
+  background-color: #3a2e18;
+  color: #ffd591;
+  border-color: #996600;
+}
 /* Light mode talks */
 .talk {
   display: flex;
