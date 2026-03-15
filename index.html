@@ -1,323 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shri - PhD student at SFU GRuVi Lab researching 3D vision, neural rendering, and computer graphics.">
+    <meta name="description"
+        content="Shri - PhD student at SFU GRuVi Lab researching 3D vision, neural rendering, and computer graphics.">
     <meta name="author" content="Shrisudhan Govindarajan">
-    <meta property="og:image" content="dp.jpg">
+    <meta property="og:image" content="dp_1.jpeg">
     <title>Shrisudhan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="stylesheet.css">
-    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="icon" href="thumbnail.jpg" type="image/png">
+    <style>
+        /* Toast Notification */
+        #toast {
+            visibility: hidden;
+            min-width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 12px;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            font-family: 'Segoe UI', sans-serif;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        /* Publication Hover Effects */
+        .publication {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 2rem !important;
+        }
+
+        .publication:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            background-color: rgba(0, 0, 0, 0.01);
+        }
+
+        body.dark-mode .publication:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .pub-abstract {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 6px 0;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        body.dark-mode .pub-abstract {
+            color: #aaa;
+        }
+
+        /* Scroll-Spy Active Links */
+        .nav-links a.active {
+            color: #ffcc00 !important;
+            font-weight: 700;
+        }
+
+        body.dark-mode .nav-links a.active {
+            color: #8ab4f8 !important;
+        }
+    </style>
 </head>
 
-<script>
-    // If theme not set manually, follow system preference
-    if (!localStorage.getItem('theme')) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        document.body.classList.add('dark-mode');
-      }
-    }
-  
-    // Optional: restore user's previous choice if they toggled
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark') {
-      document.body.classList.add('dark-mode');
-    } else if (saved === 'light') {
-      document.body.classList.remove('dark-mode');
-    }
-</script>
-
-<body class="dark-mode">
+<body>
+    <script>
+        // Restore user's previous theme choice if they have one
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        })();
+    </script>
     <header class="navbar">
         <div class="container">
             <div class="logo">Shri</div>
             <nav>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#talks">Talks</a></li>
-                <li><a href="data/CV.pdf">CV</a></li>
-            </ul>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#talks">Talks</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                </ul>
             </nav>
             <div class="nav-icons">
-            <i class="fas fa-moon" id="theme-toggle"></i>
+                <i class="fas fa-moon" id="theme-toggle"></i>
             </div>
         </div>
     </header>
 
     <section id="about">
         <div class="container">
-        <div class="section-wrapper">
-        <div class="section-title">About</div>
-        <div class="section-content">
-        </div>
-        </div>
-        <div class="about-wrapper">
-        <div class="about-left">
-            <img src="dp.jpg" alt="Profile Photo" class="profile-pic">
-            <h2>Shrisudhan Govindarajan</h2>
-            <p class="role">PhD Student @ SFU, Burnaby</p>
-            <div class="social-icons">
-            <a href="mailto:shrisudhan07@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://scholar.google.com/citations?user=6JS1yc0AAAAJ&hl=en"><i class="fab fa-google"></i></a>
-            <a href="https://github.com/Shrisudhan"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/shrisudhan-govindarajan-b6a914157/"><i class="fab fa-linkedin"></i></a>
+            <div class="section-wrapper">
+                <div class="section-title">About</div>
+                <div class="section-content">
+                </div>
             </div>
-        </div>
+            <div class="about-wrapper">
+                <div class="about-left">
+                    <img src="dp.jpeg" alt="Profile Photo" class="profile-pic">
+                    <h2>Shrisudhan Govindarajan</h2>
+                    <p class="role">PhD Student @ SFU, Burnaby</p>
+                    <div class="social-icons">
+                        <a href="mailto:shrisudhan07@gmail.com" onclick="copyEmail(event, 'shrisudhan07@gmail.com')">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=6JS1yc0AAAAJ&hl=en"><i
+                                class="fab fa-google"></i></a>
+                        <a href="https://github.com/Shrisudhan"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shrisudhan-govindarajan-b6a914157/"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
 
-        <div class="about-right">
-            <p>
-                I am currently a Ph.D. student in <a href="https://www.sfu.ca/computing.html">GRuVi Lab, SFU</a>, advised by <a href="https://theialab.ca">Prof. Andrea Tagliasacchi</a>.
-                I've had the pleasure of working with <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a> from IIT Madras, on self-supervised light field synthesis. 
-                I've also had the chance to worked with <a href="https://www.linkedin.com/in/pawan-baheti-4a67075/?originalSubdomain=in">Pawan Baheti</a> from Qualcomm, India as a part of <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2021-india"><strong>Qualcomm Innovation Fellowship, 2021-22</strong></a>.
-            </p>
-            <p>
-                My main research interest lies at the intersection of Computer vision and Computer Graphics. 
-                I am recently drawn towards the latest research works in NeRF and 3DGS, and their intersection for 3D scene representation. 
-                I am mainly interested in working towards developing generalizable 3D scene representations.
-            </p>
-        </div>
-        </div>
+                <div class="about-right">
+                    <p>
+                        I am currently a Ph.D. student in <a href="https://www.sfu.ca/computing.html">GRuVi Lab</a>,
+                        Simon Fraser University, co-advised by <a href="https://theialab.ca">Prof. Andrea
+                            Tagliasacchi</a> and <a href="https://www.cs.ubc.ca/~kmyi/">Prof.Kwang Moo Yi</a>.
+                        Before my PhD, I was a student at Indian Institute of Information Technology Madras, where I
+                        worked with <a href="https://www.ee.iitm.ac.in/kmitra/">Prof. Kaushik Mitra</a> in <a
+                            href="https://www.ee.iitm.ac.in/comp_photolab/">Computational Imaging Lab</a>.
+                        I have also had the pleasure of working with <a
+                            href="https://www.linkedin.com/in/anish-prabhu/">Anish Prabhu</a> from Google XR as a part
+                        of my student research internship.
+                    </p>
+                    <p>
+                        My research interest lies at the intersection of Computer vision and Computer Graphics.
+                        I am currently exploring the intersection of <a
+                            href="https://hwjiang1510.github.io/RayZer/">geometry-free</a> and <a
+                            href="https://qitaozhao.github.io/E-RayZer">geometry-guided</a> foundational
+                        3D models and their applications in spatial understanding.
+                    </p>
+                </div>
+            </div>
         </div>
         <hr class="section-divider">
     </section>
 
     <section id="publications">
         <div class="container">
-        <div class="section-wrapper">
-            <div class="section-title">Publications</div>
-            <div class="section-content">
-
-                <div class="publication highlighted-publication">
-                    <video src="pub_thumbnails/radfoam.mp4" autoplay muted loop playsinline></video>
-                    <div class="pub-info">
-                        <p><strong><a href="https://radfoam.github.io/">Radiant Foam: Real-Time Differentiable Ray Tracing</a></strong><br>
-                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan*</a>,
-                        <a class="author" href="http://drebain.com/" target="_blank">Daniel Rebain*</a>,
-                        <a class="author" href="https://www.cs.ubc.ca/~kmyi/" target="_blank">Kwang Moo Yi</a>,
-                        <a class="author" href="https://theialab.ca/" target="_blank">Andrea Tagliasacchi</a><br>
-                        <span class="conference">ICCV  &middot; 2025 &middot; Hawaii</span>
-                        <span class="pub-badge">⭐ Highlight</span><br>
-                        </p>
-                        <div class="pub-links">
-                            <a href="https://radfoam.github.io" class="pub-link">Project page</a>
-                            <a href="https://arxiv.org/abs/2502.01157" class="pub-link">Arxiv</a>
-                            <a href="https://github.com/theialab/radfoam" class="pub-link">Code</a>
-                            <details class="pub-link">
-                                <summary>Cite</summary>
-                                <pre>
-@article{govindarajan2025radfoam,
-author = {Govindarajan, Shrisudhan and Rebain, Daniel and Yi, Kwang Moo and Tagliasacchi, Andrea},
-title = {Radiant Foam: Real-Time Differentiable Ray Tracing},
-booktitle = {International Conference on Computer Vision (ICCV)},
-year = {2025},
-}
-                                </pre>
-                            </details>
-                        </div>
+            <div class="section-wrapper">
+                <div class="section-title">Publications</div>
+                <div class="section-content">
+                    <div id="publications-container">
+                        <!-- Dynamic Content -->
                     </div>
-                </div>
 
-                <div class="publication">
-                    <video src="pub_thumbnails/noksr.mp4" autoplay muted loop playsinline></video>
-                    <div class="pub-info">
-                        <p><strong><a href="https://theialab.github.io/noksr">NoKSR: Kernel-Free Neural Surface Reconstruction via Point Cloud Serialization</a></strong><br>
-                        <a class="author" href="http://colinzhenli.github.io/" target="_blank">Colin Li*</a>,
-                        <a class="author" href="https://wsunid.github.io/" target="_blank">Weiwei Sun*</a>,
-                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan</a>,
-                        <a class="author" href="https://scholar.google.com/citations?user=eOPO9E0AAAAJ&hl=en" target="_blank">Shaobo Xia</a>,
-                        <a class="author" href="http://drebain.com/" target="_blank">Daniel Rebain</a>,
-                        <a class="author" href="https://www.cs.ubc.ca/~kmyi/" target="_blank">Kwang Moo Yi</a>,
-                        <a class="author" href="https://theialab.ca/" target="_blank">Andrea Tagliasacchi</a><br>
-                        <span class="conference">3DV &middot; 2025 &middot; Singapore</span><br>
-                        </p>
-                        <div class="pub-links">
-                            <a href="https://theialab.github.io/noksr/" class="pub-link">Project page</a>
-                            <a href="https://arxiv.org/abs/2502.12534" class="pub-link">Arxiv</a>
-                            <a href="https://github.com/theialab/noksr" class="pub-link">Code</a>
-                            <details class="pub-link">
-                                <summary>Cite</summary>
-                                <pre>
-@article{li2025noksr,
-author = {Zhen Li and Weiwei Sun and Shrisudhan Govindarajan and Shaobo Xia and Daniel Rebain and Kwang Moo Yi and Andrea Tagliasacchi},
-title = {NoKSR: Kernel-Free Neural Surface Reconstruction via Point Cloud Serialization},
-booktitle = {International Conference on 3D Vision (3DV)},
-year = {2025},
-}
-                                </pre>
-                            </details>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="publication">
-                    <video src="pub_thumbnails/laghash.mp4" autoplay muted loop playsinline></video>
-                    <div class="pub-info">
-                        <p><strong><a href="https://theialab.github.io/laghashes/">Lagrangian Hashing for Compressed Neural Field Representations</a></strong><br>
-                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan*</a>,
-                        <a class="author" href="https://zenos4mbu.github.io" target="_blank">Zeno Sambugaro*</a>,
-                        <a class="author" href="https://ahanio.github.io" target="_blank">Ahan Shabhanov</a>,
-                        <a class="author" href="https://tovacinni.github.io" target="_blank">Towaki Takikawa</a>,
-                        <a class="author" href="https://wsunid.github.io/" target="_blank">Weiwei Sun</a>,
-                        <a class="author" href="http://drebain.com/" target="_blank">Daniel Rebain</a>,
-                        <a class="author" href="https://webapps.unitn.it/du/it/Persona/PER0003698/Curriculum" target="_blank">Nicola Conci</a>,
-                        <a class="author" href="https://www.cs.ubc.ca/~kmyi/" target="_blank">Kwang Moo Yi</a>,
-                        <a class="author" href="https://theialab.ca/" target="_blank">Andrea Tagliasacchi</a><br>
-                        <span class="conference">ECCV &middot; 2024 &middot; Milan</span><br>
-                        </p>
-                        <div class="pub-links">
-                            <a href="https://theialab.github.io/laghashes/" class="pub-link">Project page</a>
-                            <a href="https://arxiv.org/abs/2409.05334" class="pub-link">Arxiv</a>
-                            <a href="https://github.com/theialab/lagrangian_hashes" class="pub-link">Code</a>
-                            <details class="pub-link">
-                                <summary>Cite</summary>
-                                <pre>
-@article{govindarajan2024laghashes,
-author = {Govindarajan, Shrisudhan and Sambugaro, Zeno and Shabhanov, Ahan and Takikawa, Towaki and Sun, Weiweiand Rebain, Daniel and Conci, Nicola and  Yi, Kwang Moo and Tagliasacchi, Andrea},
-title = {Lagrangian Hashing for Compressed Neural Field Representations},
-booktitle = {European Conference on Computer Vision (ECCV) },
-year = {2024},
-}
-                                </pre>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="publication">
-                    <video src="pub_thumbnails/banf.mov" autoplay muted loop playsinline></video>
-                    <div class="pub-info">
-                        <p><strong><a href="https://theialab.github.io/banf/">BANF: Band-limited Neural Fields for Levels of Detail Reconstruction</a></strong><br>
-                        <a class="author" href="https://ahanio.github.io" target="_blank">Ahan Shabhanov</a>,
-                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan</a>,
-                        <a class="author" href="https://codyreading.github.io/" target="_blank">Cody Reading</a>,
-                        <a class="author" href="https://lilygoli.github.io/" target="_blank">Lily Goli</a>,
-                        <a class="author" href="http://drebain.com/" target="_blank">Daniel Rebain</a>,
-                        <a class="author" href="https://www.cs.ubc.ca/~kmyi/" target="_blank">Kwang Moo Yi</a>,
-                        <a class="author" href="https://theialab.ca/" target="_blank">Andrea Tagliasacchi</a><br>
-                        <span class="conference">CVPR &middot; 2024 &middot; Seattle</span><br>
-                        </p>
-                        <div class="pub-links">
-                            <a href="https://theialab.github.io/banf/" class="pub-link">Project page</a>
-                            <a href="https://arxiv.org/abs/2404.13024" class="pub-link">Arxiv</a>
-                            <a href="https://github.com/theialab/banf" class="pub-link">Code</a>
-                            <details class="pub-link">
-                                <summary>Cite</summary>
-                                <pre>
-@article{ahan2024banf,
-author = {Shabanov, Ahan and Govindarajan, Shrisudhan and Reading, Cody and Goli, Lily and Rebain, Daniel and Moo Yi, Kwang and Tagliasacchi, Andrea},
-title = {BANF: Band-limited Neural Fields for Levels of Detail Reconstruction},
-booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
-year = {2024},
-}
-                                </pre>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="publication">
-                    <img src="pub_thumbnails/dpmv.png" alt="Paper thumbnail">
-                    <div class="pub-info">
-                        <p><strong><a href="">Stereo-Knowledge Distillation from dpMV to Dual Pixels for Light Field Video Reconstruction</a></strong><br>
-                        <a class="author" href="https://scholar.google.com/citations?user=z_VblYsAAAAJ&hl=en" target="_blank">Aryan Garg</a>,
-                        <a class="author" href="https://www.linkedin.com/in/raghav-mallampalli/?originalSubdomain=in" target="_blank">Raghav Mallampalli</a>,
-                        <a class="author" href="https://www.linkedin.com/in/akshat-joshi-324395194/?originalSubdomain=in" target="_blank">Akshat Joshi</a>,
-                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan</a>,
-                        <a class="author" href="https://www.ee.iitm.ac.in/kmitra/research.html" target="_blank">Kaushik Mitra</a><br>
-                        <span class="conference">ICCP &middot; 2024 &middot; Lausanne</span><br>
-                        </p>
-                        <div class="pub-links">
-                            <a href="#" class="pub-link">Project page</a>
-                            <a href="https://arxiv.org/abs/2405.11823" class="pub-link">Arxiv</a>
-                            <a href="https://github.com/Aryan-Garg/dp-LFVR" class="pub-link">Code</a>
-                            <details class="pub-link">
-                                <summary>Cite</summary>
-                                <pre>
-@article{garg2024dpmv,
-author = {Aryan Garg and Raghav Mallampali and Akshat Joshi and Shrisudhan Govindarajan and Kaushik Mitra},
-title = {Stereo-Knowledge Distillation from dpMV to Dual Pixels for Light Field Video Reconstruction},
-booktitle = {International Conference on Computational Photography (ICCP)},
-year = {2024},
-}
-                                </pre>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="publication">
-                    <img src="pub_thumbnails/monolf.png" alt="Paper thumbnail">
-                    <div class="pub-info">
-                        <p><strong><a href="https://shrisudhang.github.io/pages/monolf-ECCV22/">Synthesizing Light Field Video from Monocular Video</a></strong><br>
-                        <a class="author me" href="https://shrisudhan.github.io" target="_blank">Shrisudhan Govindarajan</a>,
-                        <a class="author" href="https://asprasan.github.io/" target="_blank">Prasan Shedligeri</a>,
-                        <a class="author" href="" target="_blank">Sarah</a>,
-                        <a class="author" href="https://www.ee.iitm.ac.in/kmitra/research.html" target="_blank">Kaushik Mitra</a><br>
-                        <span class="conference">ECCV &middot; 2022 &middot; Tel Aviv</span>
-                        <span class="pub-badge">⭐ Oral (Top 2%)</span><br>
-                        </p>
-                        <div class="pub-links">
-                            <a href="https://shrisudhang.github.io/pages/monolf-ECCV22/" class="pub-link">Project page</a>
-                            <a href="https://arxiv.org/abs/2207.10357.pdf" class="pub-link">Arxiv</a>
-                            <a href="https://github.com/ShrisudhanG/Synthesizing-Light-Field-Video-from-Monocular-Video" class="pub-link">Code</a>
-                            <details class="pub-link">
-                                <summary>Cite</summary>
-                                <pre>
-@article{govindarajan2022monolf,
-author = {Govindarajan, Shrisudhan and Shedligeri, Prasan and Sarah and Mitra, Kaushik},
-title = {Synthesizing Light Field Video from Monocular Video},
-booktitle = {European Conference on Computer Vision (ECCV) },
-year = {2022},
-}
-                                </pre>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
         </div>
         <hr class="section-divider">
     </section>
 
     <section id="talks">
         <div class="container">
-        <div class="section-wrapper">
-            <div class="section-title">Talks</div>
-            <div class="section-content">
+            <div class="section-wrapper">
+                <div class="section-title">Talks</div>
+                <div class="section-content">
 
-                <div class="talk">
-                    <img src="talks_thumbnail/MIPI-logo.png" alt="MIPI logo">
-                    <div class="talk-info">
-                        <p><strong><a>Synthesizing Light Field Video from Monocular Video</a></strong><br>
-                        <a class="conference">ECCV &middot; 2022 &middot; Tel Aviv</a><br></p>
+                    <div id="talks-container">
+                        <!-- Dynamic Content -->
                     </div>
-                </div>
 
-                <div class="talk">
-                    <img src="talks_thumbnail/VisionIndia-logo.png" alt="ICVGIP logo">
-                    <div class="talk-info">
-                        <p><strong><a>Synthesizing Light Field Video from Monocular Video</a></strong><br>
-                        <a class="conference">ICVGIP &middot; 2022 &middot; Tel Aviv</a><br></p>
-                    </div>
                 </div>
-
             </div>
-        </div>
         </div>
         <hr class="section-divider">
     </section>
 
+    <div id="toast">Email address copied!</div>
+
+    <script src="data/publications.js"></script>
+    <script src="data/talks.js"></script>
     <script>
+        // Data Rendering Engine
+        function loadData() {
+            try {
+                // Use global variables from included scripts
+                if (typeof publicationsData !== 'undefined' && typeof talksData !== 'undefined') {
+                    renderPublications(publicationsData);
+                    renderTalks(talksData);
+                    initScrollSpy();
+                } else {
+                    console.error("Data variables not found.");
+                }
+            } catch (error) {
+                console.error("Error loading data:", error);
+            }
+        }
+
+        function renderPublications(pubs) {
+            const container = document.getElementById('publications-container');
+            container.innerHTML = pubs.map(pub => {
+                if (pub.id === "semanticfoam") return ""; // Skip the one without full details for web view if desired, or handle it
+
+                const mediaHTML = pub.media.type === 'video'
+                    ? `<video src="${pub.media.src}" autoplay muted loop playsinline></video>`
+                    : `<img src="${pub.media.src}" alt="Paper thumbnail">`;
+
+                const badgesHTML = (pub.badges || []).map(badge =>
+                    `<span class="pub-badge">${badge.text.includes('Highlight') ? '⭐ ' : ''}${badge.text}</span>`
+                ).join(' ');
+
+                // Re-construct authors HTML if not provided directly
+                const authorsHTML = pub.authors.map(author => {
+                    if (author.includes("Shrisudhan Govindarajan")) {
+                        return `<a class="author me" href="https://shrisudhan.github.io" target="_blank">${author}</a>`;
+                    }
+                    // Add other author links if available in data, otherwise just text
+                    return `<span class="author">${author}</span>`;
+                }).join(', ');
+
+                const linksHTML = pub.links.map(link =>
+                    `<a href="${link.url}" class="pub-link">${link.label}</a>`
+                ).join('\n');
+
+                const abstractHTML = pub.abstract ? `<p class="pub-abstract">${pub.abstract}</p>` : '';
+
+                return `
+                    <div class="publication ${pub.highlightOnIndex ? 'highlighted-publication' : ''}">
+                        ${mediaHTML}
+                        <div class="pub-info">
+                            <p><strong><a href="${pub.links[0]?.url || '#'}">${pub.title}</a></strong><br>
+                                ${authorsHTML}<br>
+                                <span class="conference">${pub.venue} &middot; ${pub.year} &middot; ${pub.location}</span>
+                                ${badgesHTML}<br>
+                            </p>
+                            ${abstractHTML}
+                            <div class="pub-links">
+                                ${linksHTML}
+                                <details class="pub-link">
+                                    <summary>Cite</summary>
+                                    <pre>${pub.bibtex}</pre>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderTalks(talks) {
+            const container = document.getElementById('talks-container');
+            container.innerHTML = talks
+                .filter(talk => talk.showOnIndex || talk.isInvited)
+                .map(talk => `
+                    <div class="talk">
+                        <div class="talk-info">
+                            <strong>${talk.title}</strong>, <span class="conference">${talk.venue}, ${talk.year}</span>
+                        </div>
+                    </div>
+                `).join('');
+        }
+
+        // Initialize Data
+        loadData();
+
+        // Theme Toggle Logic
         const toggleBtn = document.getElementById('theme-toggle');
         toggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
         });
+
+        // Email Copy Logic
+        function copyEmail(event, email) {
+            navigator.clipboard.writeText(email).then(() => {
+                const toast = document.getElementById("toast");
+                toast.className = "show";
+                setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+            });
+        }
+
+        // Section Scroll-Spy Logic
+        function initScrollSpy() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section[id]');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        }
     </script>
 </body>
+
 </html>
