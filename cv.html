@@ -143,8 +143,7 @@
         }
 
         /* Timeline Aesthetic */
-        #education .entry::after,
-        #work-experience .entry::after {
+        #education .entry::after {
             content: "";
             position: absolute;
             left: -24px;
@@ -155,13 +154,11 @@
             z-index: 0;
         }
 
-        #education .entry:last-child::after,
-        #work-experience .entry:last-child::after {
+        #education .entry:last-child::after {
             display: none;
         }
 
-        #education .entry::before,
-        #work-experience .entry::before {
+        #education .entry::before {
             content: "";
             position: absolute;
             left: -27px;
@@ -182,14 +179,14 @@
             border-radius: 4px;
         }
 
-        .highlight-entry::before {
+        #education .highlight-entry::before {
             left: 5px !important;
             /* -27px + 32px offset */
             background: #444 !important;
             border-color: #444 !important;
         }
 
-        .highlight-entry::after {
+        #education .highlight-entry::after {
             left: 8px !important;
             /* -24px + 32px offset */
         }
@@ -678,6 +675,13 @@
             </div>
         </section>
 
+        <section id="teaching">
+            <h2>Teaching Experience</h2>
+            <div id="teaching-container">
+                <!-- Dynamic Content -->
+            </div>
+        </section>
+
         <section id="talks">
             <h2>Invited Talks</h2>
             <div id="talks-container">
@@ -702,6 +706,7 @@
 
     <script src="data/education.js"></script>
     <script src="data/experience.js"></script>
+    <script src="data/teaching.js"></script>
     <script src="data/achievements.js"></script>
     <script src="data/publications.js"></script>
     <script src="data/talks.js"></script>
@@ -714,6 +719,7 @@
                 if (typeof educationData !== 'undefined') {
                     renderEducation(educationData);
                     renderExperience(experienceData);
+                    renderTeaching(teachingData);
                     renderAchievements(achievementsData);
                     renderPublications(publicationsData);
                     renderTalks(talksData);
@@ -758,9 +764,22 @@
                         <span class="entry-subtitle">${exp.title}</span>
                         <span class="entry-date">${exp.date}</span>
                     </div>
-                    <ul class="entry-details">
-                        ${exp.details.map(detail => `<li>${detail}</li>`).join('')}
-                    </ul>
+                </div>
+            `).join('');
+        }
+
+        function renderTeaching(data) {
+            const container = document.getElementById('teaching-container');
+            container.innerHTML = data.map(teach => `
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">${teach.course}</span>
+                        <span class="entry-location">${teach.position}</span>
+                    </div>
+                    <div class="entry-subtitle-row">
+                        <span class="entry-subtitle">${teach.university}</span>
+                        <span class="entry-date">${teach.date}</span>
+                    </div>
                 </div>
             `).join('');
         }

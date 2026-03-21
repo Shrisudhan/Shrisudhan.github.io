@@ -5,22 +5,22 @@ const referencesData = [
         "role": "Associate Professor, Dept. of Computing Science, SFU",
         "email": "taiya@theialab.ca"
     },
-    // {
-    //     "name": "Dr. Kwang Moo Yi",
-    //     "location": "Vancouver, Canada",
-    //     "role": "Assistant Professor, Dept. of Computing Science, UBC",
-    //     "email": "kmyi@cs.ubc.ca"
-    // },
     {
-        "name": "Daniel Rebain",
+        "name": "Dr. Kwang Moo Yi",
         "location": "Vancouver, Canada",
-        "role": "Research Scientist, Wayve",
-        "email": "daniel.rebain@wayve.ai"
+        "role": "Assistant Professor, Dept. of Computing Science, UBC",
+        "email": "kmyi@cs.ubc.ca"
     },
     {
         "name": "Anish Prabhu",
         "location": "Seattle, USA",
         "role": "Staff Software Engineer, Google",
         "email": "anishprabhu@google.com"
+    },
+    {
+        "name": "Daniel Rebain",
+        "location": "Vancouver, Canada",
+        "role": "Research Scientist, Wayve",
+        "email": "daniel.rebain@wayve.ai"
     }
 ];
