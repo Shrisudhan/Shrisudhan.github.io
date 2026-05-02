@@ -235,11 +235,9 @@
         function renderPublications(pubs) {
             const container = document.getElementById('publications-container');
             container.innerHTML = pubs.map(pub => {
-                if (pub.id === "semanticfoam") return ""; // Skip the one without full details for web view if desired, or handle it
-
-                const mediaHTML = pub.media.type === 'video'
+                const mediaHTML = pub.media && pub.media.src ? (pub.media.type === 'video'
                     ? `<video src="${pub.media.src}" autoplay muted loop playsinline></video>`
-                    : `<img src="${pub.media.src}" alt="Paper thumbnail">`;
+                    : `<img src="${pub.media.src}" alt="Paper thumbnail">`) : `<div style="width:200px;height:120px;background:#f5f5f5;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#888;box-shadow: 0 2px 8px rgba(0,0,0,0.1);">Image Pending</div>`;
 
                 const badgesHTML = (pub.badges || []).map(badge =>
                     `<span class="pub-badge">${badge.text.includes('Highlight') ? '⭐ ' : ''}${badge.text}</span>`

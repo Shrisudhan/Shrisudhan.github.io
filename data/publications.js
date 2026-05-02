@@ -1,20 +1,63 @@
 const publicationsData = [
     {
+        "id": "powerfoam",
+        "title": "Power Foam: Unifying Real-Time Differentiable Ray Tracing and Rasterization",
+        "authors": [
+            "Shrisudhan Govindarajan*",
+            "Daniel Rebain*",
+            "Dor Verbin",
+            "Kwang Moo Yi",
+            "Anish Prabhu",
+            "Andrea Tagliasacchi"
+        ],
+        "venue": "arXiv",
+        "year": "2026",
+        "location": "",
+        "media": {
+            "type": "video",
+            "src": "pub_thumbnails/powerfoam.mp4"
+        },
+        "links": [
+            { "label": "Project page", "url": "https://powerfoam.github.io/" },
+            { "label": "Arxiv", "url": "http://arxiv.org/abs/2604.24994" },
+            { "label": "Code", "url": "https://github.com/theialab/powerfoam" }
+        ],
+        "abstract": "Unifying differentiable ray tracing and rasterization in a single scene representation.",
+        "bibtex": "@article{govindarajan2026powerfoam,\nauthor = {Govindarajan, Shrisudhan and Rebain, Daniel and Verbin, Dor and Yi, Kwang Moo and Prabhu, Anish and Tagliasacchi, Andrea},\ntitle = {Power Foam: Unifying Real-Time Differentiable Ray Tracing and Rasterization},\njournal = {arXiv},\nyear = {2026},\n}",
+        "highlightOnIndex": true,
+        "selected": true
+    },
+    {
         "id": "semanticfoam",
         "title": "Semantic Foam: Unifying Spatial and Semantic Scene Decomposition",
         "authors": [
             "Amr Sharafeldin",
-            "Aryan Mikaeili",
+            "Shrisudhan Govindarajan*",
             "Thomas Walker",
-            "Shrisudhan Govindarajan",
+            "Aryan Mikaeili",
             "Daniel Rebain",
             "Kwang Moo Yi",
-            "Andrea Tagliasacchi"
+            "Andrea Tagliasacchi*"
         ],
         "venue": "CVPR",
         "year": "2026",
-        "location": "",
-        "abstract": "Abstracts the scene into hierarchical components that unify spatial geometry with semantic decomposition.",
+        "location": "Denver",
+        "media": {
+            "type": "video",
+            "src": "pub_thumbnails/semanticfoam.mp4"
+        },
+        "links": [
+            { "label": "Project page", "url": "https://semanticfoam.github.io/" },
+            { "label": "Arxiv", "url": "https://arxiv.org/abs/2604.26262" }
+        ],
+        "badges": [
+            {
+                "text": "Highlight (Top 5%)",
+                "icon": "fa-solid fa-star"
+            }
+        ],
+        "abstract": "Combines spatial decomposition with semantic decomposition for scene understanding.",
+        "bibtex": "@inproceedings{semanticfoam2026,\ntitle = {Semantic Foam: Unifying Spatial and Semantic Scene Decomposition},\nauthor = {Sharafeldin, Amr and Govindarajan, Shrisudhan and Walker, Thomas and Mikaeili, Aryan and Rebain, Daniel and Yi, Kwang Moo and Tagliasacchi, Andrea},\nbooktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},\nyear = {2026}\n}",
         "highlightOnIndex": false,
         "selected": false
     },

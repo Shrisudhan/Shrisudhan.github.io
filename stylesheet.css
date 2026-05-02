@@ -247,6 +247,7 @@ body.dark-mode .about-right p {
 
 .publication {
   display: flex;
+  align-items: flex-start;
   gap: 2rem;
   padding: 0.5rem;
   margin-bottom: 2rem;
