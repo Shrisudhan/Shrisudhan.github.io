@@ -67,7 +67,6 @@ const publicationsData = [
         "authors": [
             "Shrisudhan Govindarajan*",
             "Daniel Rebain*",
-            "Nicola Conci",
             "Kwang Moo Yi",
             "Andrea Tagliasacchi"
         ],
